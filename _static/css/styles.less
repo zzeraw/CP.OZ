@@ -10,10 +10,15 @@ div.container {
 }
 
 body {
+    background-color: #f5f5f5;
     font-family: 'Open Sans', sans-serif;
 
     a {
         text-decoration: underline;
+
+        &.btn {
+            text-decoration: none;
+        }
     }
 }
 
@@ -31,20 +36,27 @@ body {
 }
 
 .header-description {
+    background-color: #fff;
+    padding: 20px 15px;
+
     .title {
-        font-size: 30px;
+        font-size: 24px;
+        line-height: 1.3;
     }
 
     .description {
         font-size: 24px;
+        line-height: 1.3;
+    }
+
+    .btn {
+        margin-top: 10px;
     }
 }
 
 
 
 .header-tpl ( @text-color ) {
-    padding: 10px 0 0 0;
-
     .logo {
         img {
             width: 60px;
@@ -67,6 +79,12 @@ body {
                     color: @text-color;
                     text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
                 }
+
+                &.active {
+                    a {
+                        font-weight: bold;
+                    }
+                }
             }
         }
     }
@@ -83,11 +101,24 @@ body {
     }
 }
 
-.header {
-    .header-tpl(#000);
+.default-header {
+
+    .strip {
+        background-color: lighten(@blue-color, 10%);
+
+        .container {
+            padding-top: 7px;
+
+            background-color: @blue-color;
+        }
+    }
+
+    .header-tpl(#fff);
 }
 
 .homepage-header {
+    padding: 10px 0 0 0;
+
     .header-tpl(#fff);
 }
 
@@ -97,6 +128,15 @@ body {
     // z-index: 10;
 }
 
+.page-content {
+
+
+    & > .container {
+        background-color: #fff;
+        min-height: 800px;
+        padding-bottom: 60px;
+    }
+}
 
 
 .main-order-block {
@@ -211,3 +251,72 @@ body {
     color: #fff;
     padding: 50px 0;
 }
+
+
+
+
+
+.left-sidebar-menu {
+    margin-top: 20px;
+
+    .title {
+        font-size: 16px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+    }
+
+    & > ul {
+        padding-left: 20px;
+
+        & > li {
+
+        }
+    }
+
+    ul {
+        li {
+            font-size: 12px;
+            line-height: 2;
+
+            a {
+
+            }
+        }
+    }
+}
+
+
+
+.form-inline {
+    background-color: #fff;
+    border: 2px solid @blue-color;
+    padding: 10px 10px 10px 10px;
+
+    .form-group {
+        margin-right: 10px;
+        .form-control {
+            width: 160px;
+        }
+
+        input.form-control {
+            border-color: @black-color;
+        }
+
+        .errorMessage {
+            font-size: 11px;
+            color: red;
+            max-width: 160px;
+        }
+    }
+
+    .btn {
+        width: 160px;
+    }
+}
+
+
+
+
+
+
+
